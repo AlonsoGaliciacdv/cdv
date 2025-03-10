@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Emociones - Colegio del Valle</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f3f3f3; }
+        h1 { color: #ff6b6b; }
+        .container { width: 80%; margin: auto; }
+        .emocion { display: inline-block; width: 30%; margin: 10px; padding: 20px; background: white; border-radius: 10px; }
+        .btn { background-color: #ff6b6b; color: white; padding: 10px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Las Emociones en Nuestra Vida</h1>
+    <p>Descubre cómo influyen las emociones en nuestro día a día.</p>
+
+    <div class="container">
+        <div class="emocion" onclick="hablar('Alegría nos hace sentir bien y compartir felicidad.')">
+            <h2>😊 Alegría</h2>
+            <p>Nos hace sentir bien y compartir felicidad.</p>
+        </div>
+        <div class="emocion" onclick="hablar('La tristeza nos ayuda a reflexionar y pedir apoyo.')">
+            <h2>😢 Tristeza</h2>
+            <p>Nos ayuda a reflexionar y pedir apoyo.</p>
+        </div>
+        <div class="emocion" onclick="hablar('La ira es normal, pero hay que controlarla.')">
+            <h2>😡 Ira</h2>
+            <p>Es normal, pero hay que controlarla.</p>
+        </div>
+    </div>
+
+    <h2>¿Cómo te sientes hoy?</h2>
+    <button class="btn" onclick="mostrarMensaje()">Descúbrelo</button>
+
+    <script>
+        function mostrarMensaje() {
+            let mensaje = "Recuerda: todas las emociones son importantes.";
+            alert(mensaje);
+            hablar(mensaje);
+        }
+
+        function hablar(texto) {
+            let voz = new SpeechSynthesisUtterance(texto);
+            voz.lang = "es-ES";
+            window.speechSynthesis.speak(voz);
+        }
+    </script>
+</body>
+</html>
